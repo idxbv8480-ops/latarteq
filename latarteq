@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سبحة عصرية</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #3e2723; /* بني غامق */
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .tasbeeh-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+    .tasbeeh {
+        background: #5d4037; /* بني متوسط */
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+    .tasbeeh:hover {
+        box-shadow: 0 0 25px #ffca28; /* تأثير اضاءة عند المرور */
+    }
+    .tasbeeh button {
+        background: #ffca28;
+        border: none;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #3e2723;
+        transition: 0.2s;
+        box-shadow: 0 0 10px #00000070;
+        margin: 10px;
+    }
+    .tasbeeh button:active {
+        box-shadow: 0 0 25px #ffca28;
+        transform: scale(1.1);
+    }
+    .count {
+        font-size: 32px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .reset {
+        margin-top: 10px;
+        background: #d84315;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        transition: 0.2s;
+    }
+    .reset:active {
+        transform: scale(0.95);
+    }
+</style>
+</head>
+<body>
+<h1>لتــــــــــــــــرتق</h1>
+<div class="tasbeeh-container">
+
+    <div class="tasbeeh" id="salawat">
+        <h2>الصلاة على النبي ﷺ</h2>
+        <button onclick="increment('salawatCount')">🟡</button>
+        <div class="count" id="salawatCount">0</div>
+        <button class="reset" onclick="resetCount('salawatCount')">إعادة العد</button>
+    </div>
+
+    <div class="tasbeeh" id="subhanAllah">
+        <h2>سبحان الله</h2>
+        <button onclick="increment('subhanAllahCount')">🟢</button>
+        <div class="count" id="subhanAllahCount">0</div>
+        <button class="reset" onclick="resetCount('subhanAllahCount')">إعادة العد</button>
+    </div>
+
+    <div class="tasbeeh" id="alhamdulillah">
+        <h2>الحمد لله</h2>
+        <button onclick="increment('alhamdulillahCount')">🔵</button>
+        <div class="count" id="alhamdulillahCount">0</div>
+        <button class="reset" onclick="resetCount('alhamdulillahCount')">إعادة العد</button>
+    </div>
+
+    <div class="tasbeeh" id="allahuAkbar">
+        <h2>الله أكبر</h2>
+        <button onclick="increment('allahuAkbarCount')">🟣</button>
+        <div class="count" id="allahuAkbarCount">0</div>
+        <button class="reset" onclick="resetCount('allahuAkbarCount')">إعادة العد</button>
+    </div>
+
+</div>
+
+<script>
+    function increment(id) {
+        const countEl = document.getElementById(id);
+        countEl.innerText = parseInt(countEl.innerText) + 1;
+    }
+
+    function resetCount(id) {
+        document.getElementById(id).innerText = 0;
+    }
+</script>
+</body>
+</html>
